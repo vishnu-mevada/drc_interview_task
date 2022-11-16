@@ -1,0 +1,38 @@
+<div class="card text-center m-3">
+
+    <div class="card-header pb-3 pt-3">
+        <app-filter [locationData]="filterLocation" [brandData]="filterBrand" [categoryData]="filterCategory" (filterValue)="onFilterValChange($event)"
+            (checkboxValue)="onCheckboxFilterChange($event)" (priceSliderValue)="onPriceSliderValChange($event)">
+        </app-filter>
+    </div>
+
+    <div class="container mt-3">
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Brand</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Location</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let product of productList">
+                <tr>
+                    <th scope="row">{{product.id}}</th>
+                    <td>{{product.title}}</td>
+                    <td>{{product.brand}}</td>
+                    <td>{{product.category}}</td>
+                    <td>{{product.price}}</td>
+                    <td>{{product.location}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card-footer pb-3 pt-3">
+        <app-pagination [allPagesNumber]="allPages" (changePage)="onPageChange($event)"></app-pagination>
+    </div>
+
+</div>

@@ -1,0 +1,20 @@
+.p-slider-horizontal .p-slider-handle {
+    top: 60% !important;
+}
+
+.p-slider .p-slider-handle {
+    height: 1rem !important;
+    width: 1rem !important;
+    background: #ffffff;
+    border: 2px solid #666666;
+    border-radius: 100%;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.p-slider .p-slider-range {
+    background: #b01117 !important;
+}
+
+.p-slider-horizontal .p-slider-range {
+    height: 120% !important;
+}

@@ -1,0 +1,33 @@
+<div class="container-filter">
+
+    <div class="dropdown">
+        <select id="selectbox1" id="inputGroupSelect01" [(ngModel)]="selectedBrandVal"
+            (change)="cahngedBrandVal($event)" placeholder="Select brand">
+            <option hidden disabled value="">Select brand</option>
+            <option selected value="all">All</option>
+            <option value="{{data}}" *ngFor="let data of brandData">{{data}}</option>
+        </select>
+    </div>
+
+    <div class="dropdown">
+        <select id="selectbox1" [(ngModel)]="selectedCityVal" (change)="changedLocationVal($event)"
+            placeholder="Select city">
+            <option hidden disabled value="">Select city</option>
+            <option selected value="all">All</option>
+            <option value="{{data}}" *ngFor="let data of locationData">{{data}}</option>
+        </select>
+    </div>
+
+    <div class="checkbox-filter">
+        <span style="font-weight: 500; width: 320px;">Filter by Category</span>
+        <label *ngFor="let data of categoryData">
+            <input type="checkbox" (click)="selectedCheckboxVal(data)" />
+            <span>{{data}}</span>
+        </label>
+    </div>
+
+    <div id="price-range-filter" (click)="priceRangeSliderVal($event)">
+        <h6>Filter by price range: {{rangeValues[0] + ' - ' + rangeValues[1]}}</h6>
+        <p-slider [style]="{'width':'13em'}" [(ngModel)]="rangeValues" [min]="0" [max]="1800" [range]="true"></p-slider>
+    </div>
+</div>
